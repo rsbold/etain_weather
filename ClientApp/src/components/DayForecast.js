@@ -35,41 +35,44 @@ export class DayForecast extends React.Component {
         const applicableDate = new Date(this.props.forecast.applicable_date).toLocaleDateString('en-GB');
         const imgSource = 'https://www.metaweather.com/static/img/weather/png/' + this.props.forecast.weather_state_abbr + '.png';
         return(
-            <Card>
-                <Card.Header>
-                    <h2>{applicableDate} - {this.props.forecast.weather_state_name}</h2>
-                </Card.Header>
-                <Card.Body>
-                    <Row>
-                        <Col lg={2}>
-                            <img src={imgSource} alt='weather icon' width='64' height='64' />
-                        </Col>
-                        <Col lg={3}>
-                            <div class="lead">
-                                Temp: {this.props.forecast.the_temp.toFixed()}&deg;C
-                            </div>
-                            <div>
-                               Min: {this.props.forecast.min_temp.toFixed()}&deg;C
-                               Max: {this.props.forecast.max_temp.toFixed()}&deg;C 
-                            </div>
-                        </Col>
-                        <Col lg={3}>
-                            <div>
-                                Wind direction: {this.props.forecast.wind_direction_compass}
-                            </div>
-                            <div>
-                                Wind speed: {this.props.forecast.wind_speed.toFixed()}
-                            </div>
-                        </Col>
-                        <Col lg={3}>
-                            Air pressure: {this.props.forecast.air_pressure.toFixed()}<br />
-                            Humidity: {this.props.forecast.humidity.toFixed()}<br />
-                            Visibility: {this.props.forecast.visibility.toFixed()}<br />
-                            Predictability: {this.props.forecast.predictability.toFixed()}
-                        </Col>
-                    </Row>
-                </Card.Body>
-            </Card>
+            <div>
+                <div>&nbsp;</div>
+                <Card>
+                    <Card.Header>
+                        <h2>{applicableDate} - {this.props.forecast.weather_state_name}</h2>
+                    </Card.Header>
+                    <Card.Body>
+                        <Row>
+                            <Col lg={2}>
+                                <img src={imgSource} alt='weather icon' width='64' height='64' />
+                            </Col>
+                            <Col lg={3}>
+                                <div class="lead">
+                                    Temp: {this.props.forecast.the_temp.toFixed()}&deg;C
+                                </div>
+                                <div>
+                                Min: {this.props.forecast.min_temp.toFixed()}&deg;C
+                                Max: {this.props.forecast.max_temp.toFixed()}&deg;C 
+                                </div>
+                            </Col>
+                            <Col lg={3}>
+                                <div>
+                                    Wind direction: {this.props.forecast.wind_direction_compass}
+                                </div>
+                                <div>
+                                    Wind speed: {this.props.forecast.wind_speed.toFixed()}
+                                </div>
+                            </Col>
+                            <Col lg={3}>
+                                Air pressure: {this.props.forecast.air_pressure.toFixed()}<br />
+                                Humidity: {this.props.forecast.humidity.toFixed()}<br />
+                                Visibility: {this.props.forecast.visibility.toFixed()}<br />
+                                Predictability: {this.props.forecast.predictability.toFixed()}
+                            </Col>
+                        </Row>
+                    </Card.Body>
+                </Card>
+            </div>
         );
 
     }
