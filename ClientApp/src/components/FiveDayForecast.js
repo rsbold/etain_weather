@@ -38,7 +38,10 @@ export class FiveDayForecast extends React.Component {
         if(this.state.loading) {
             content = <div>Loading, please wait...</div>
         } else {
-            content = this.state.dayForecasts.consolidated_weather.map((f) => <DayForecast
+            // API returns 6 days worth of forecasts by default but the spec calls for
+            // us to display only 5 days.  Use array slice function to limit the number
+            // of day forecasts we render.
+            content = this.state.dayForecasts.consolidated_weather.slice(0, 5).map((f) => <DayForecast
                 key = {f.id}
                 forecast = {f} />
             );
