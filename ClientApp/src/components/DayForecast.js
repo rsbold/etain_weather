@@ -46,11 +46,11 @@ export class DayForecast extends React.Component {
                         </Col>
                         <Col lg={3}>
                             <div class="lead">
-                                Temp: {this.props.forecast.the_temp}&deg;C
+                                Temp: {this.props.forecast.the_temp.toFixed()}&deg;C
                             </div>
                             <div>
-                               Min: {this.props.forecast.min_temp}&deg;C
-                               Max: {this.props.forecast.max_temp}&deg;C 
+                               Min: {this.props.forecast.min_temp.toFixed()}&deg;C
+                               Max: {this.props.forecast.max_temp.toFixed()}&deg;C 
                             </div>
                         </Col>
                         <Col lg={3}>
@@ -58,14 +58,14 @@ export class DayForecast extends React.Component {
                                 Wind direction: {this.props.forecast.wind_direction_compass}
                             </div>
                             <div>
-                                Wind speed: {this.props.forecast.wind_speed}
+                                Wind speed: {this.props.forecast.wind_speed.toFixed()}
                             </div>
                         </Col>
                         <Col lg={3}>
-                            Air pressure: {this.props.forecast.air_pressure}<br />
-                            Humidity: {this.props.forecast.humidity}<br />
-                            Visibility: {this.props.forecast.visibility}<br />
-                            Predictability: {this.props.forecast.predictability}
+                            Air pressure: {this.props.forecast.air_pressure.toFixed()}<br />
+                            Humidity: {this.props.forecast.humidity.toFixed()}<br />
+                            Visibility: {this.props.forecast.visibility.toFixed()}<br />
+                            Predictability: {this.props.forecast.predictability.toFixed()}
                         </Col>
                     </Row>
                 </Card.Body>
