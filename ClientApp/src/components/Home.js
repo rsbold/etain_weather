@@ -8,8 +8,8 @@ export class Home extends Component {
     
     return (
       <div>
-        Since I've now modified App.js like this:
-        <code><AuthorizeRoute exact path='/' component={FiveDayForecast} /></code>
+        Since I've now modified App.js to remove the line AuthorizeRoute mapping
+        exact path / to the FiveDayForecast component, 
         the home route ('/') now sends the user to the FiveDayForecast component, 
         but only if they're authorized.  This means this component should never be shown
         and could be deleted if desired.  I've left it in just to note the route change.
