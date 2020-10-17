@@ -8,9 +8,11 @@ export class Home extends Component {
     
     return (
       <div>
-        <h1>Belfast Weather</h1>
-        <p>Log in to see the weather forecast for Belfast for the next five days.</p>
-        <p>Weather forecast data provided by metaweather.com</p>
+        Since I've now modified App.js like this:
+        <code><AuthorizeRoute exact path='/' component={FiveDayForecast} /></code>
+        the home route ('/') now sends the user to the FiveDayForecast component, 
+        but only if they're authorized.  This means this component should never be shown
+        and could be deleted if desired.  I've left it in just to note the route change.
       </div>
     );
   }
