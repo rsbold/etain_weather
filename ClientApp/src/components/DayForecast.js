@@ -32,27 +32,42 @@ export class DayForecast extends React.Component {
     }
 
     render() {
-        const applicableDate = this.props.forecast.applicable_date;
+        const applicableDate = new Date(this.props.forecast.applicable_date).toLocaleDateString('en-GB');
         const imgSource = 'https://www.metaweather.com/static/img/weather/png/' + this.props.forecast.weather_state_abbr + '.png';
         return(
             <Card>
                 <Card.Header>
-                    <Col lg={3}>{applicableDate}</Col>
-                    <Col lg={9}>{this.props.forecast.weather_state_name}</Col>
+                    <h2>{applicableDate} - {this.props.forecast.weather_state_name}</h2>
                 </Card.Header>
                 <Card.Body>
-                    <img src={imgSource} alt='weather icon' width='64' height='64' />
-                    <ul>
-                        <li>Temperature: {this.props.forecast.the_temp}</li>
-                        <li>Min temperature: {this.props.forecast.min_temp}</li>
-                        <li>Max temperature: {this.props.forecast.max_temp}</li>
-                        <li>Wind direction: {this.props.forecast.wind_direction_compass}</li>
-                        <li>Wind speed: {this.props.forecast.wind_speed}</li>
-                        <li>Air pressure: {this.props.forecast.air_pressure}</li>
-                        <li>Humidity: {this.props.forecast.humidity}</li>
-                        <li>Visibility: {this.props.forecast.visibility}</li>
-                        <li>Predictability: {this.props.forecast.predictability}</li>
-                    </ul>
+                    <Row>
+                        <Col lg={2}>
+                            <img src={imgSource} alt='weather icon' width='64' height='64' />
+                        </Col>
+                        <Col lg={3}>
+                            <div class="lead">
+                                Temp: {this.props.forecast.the_temp}&deg;C
+                            </div>
+                            <div>
+                               Min: {this.props.forecast.min_temp}&deg;C
+                               Max: {this.props.forecast.max_temp}&deg;C 
+                            </div>
+                        </Col>
+                        <Col lg={3}>
+                            <div>
+                                Wind direction: {this.props.forecast.wind_direction_compass}
+                            </div>
+                            <div>
+                                Wind speed: {this.props.forecast.wind_speed}
+                            </div>
+                        </Col>
+                        <Col lg={3}>
+                            Air pressure: {this.props.forecast.air_pressure}<br />
+                            Humidity: {this.props.forecast.humidity}<br />
+                            Visibility: {this.props.forecast.visibility}<br />
+                            Predictability: {this.props.forecast.predictability}
+                        </Col>
+                    </Row>
                 </Card.Body>
             </Card>
         );

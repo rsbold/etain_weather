@@ -38,13 +38,15 @@ export class FiveDayForecast extends React.Component {
             content = <p>Loading weather forecast, please wait...</p>
         } else {
             content = this.state.dayForecasts.consolidated_weather.map((f) => <DayForecast
+                key = {f.id}
                 forecast = {f} />
             );
         }
 
+        const retrievedDate = new Date(this.state.forecastRetrievedDate).toLocaleDateString('en-GB');
         return(
             <div>
-                <h1>Forecast retrieved at {this.state.forecastRetrievedDate}</h1>
+                <h1>Forecast retrieved at {retrievedDate}</h1>
                 {content}
             </div>
         );

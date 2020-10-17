@@ -8,7 +8,8 @@ namespace etain.Models
 {
     public class DayForecast
     {
-        //public string id {get;set;}
+        public long id {get;set;}
+        
         [JsonPropertyName("created")]
         public DateTime DateCreated {get;set;}
         
