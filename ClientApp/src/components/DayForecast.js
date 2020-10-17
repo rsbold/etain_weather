@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Card, Row, Col } from 'react-bootstrap';
 
 // This component displays the forecast for a single day. 
 // Forecast data passed in via props, there's no state
@@ -32,14 +32,29 @@ export class DayForecast extends React.Component {
     }
 
     render() {
-        // TODO: Add temperatures, wind speed/direction, weather icon etc.
+        const applicableDate = this.props.forecast.applicable_date;
+        const imgSource = 'https://www.metaweather.com/static/img/weather/png/' + this.props.forecast.weather_state_abbr + '.png';
         return(
-            <div>
-                <h2>{this.props.applicable_date}</h2>
-                <p>
-                    {this.props.weather_state_name}
-                </p>
-            </div>
+            <Card>
+                <Card.Header>
+                    <Col lg={3}>{applicableDate}</Col>
+                    <Col lg={9}>{this.props.forecast.weather_state_name}</Col>
+                </Card.Header>
+                <Card.Body>
+                    <img src={imgSource} alt='weather icon' width='64' height='64' />
+                    <ul>
+                        <li>Temperature: {this.props.forecast.the_temp}</li>
+                        <li>Min temperature: {this.props.forecast.min_temp}</li>
+                        <li>Max temperature: {this.props.forecast.max_temp}</li>
+                        <li>Wind direction: {this.props.forecast.wind_direction_compass}</li>
+                        <li>Wind speed: {this.props.forecast.wind_speed}</li>
+                        <li>Air pressure: {this.props.forecast.air_pressure}</li>
+                        <li>Humidity: {this.props.forecast.humidity}</li>
+                        <li>Visibility: {this.props.forecast.visibility}</li>
+                        <li>Predictability: {this.props.forecast.predictability}</li>
+                    </ul>
+                </Card.Body>
+            </Card>
         );
 
     }

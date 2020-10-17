@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 // Author: Rob Bold 16/10/2020
 // Represents the JSON object returned by Metaweather.com/api/location,
@@ -23,11 +24,12 @@ namespace etain.Models
     // these classes according to the .net convention.
     public class Forecast
     {
-        public IEnumerable<DayForecast> consolidated_weather {get;set;}
+        [JsonPropertyName("consolidated_weather")]
+        public IEnumerable<DayForecast> DayForecasts {get;set;}
 
         public Forecast()
         {
-            consolidated_weather = new List<DayForecast>();
+            DayForecasts = new List<DayForecast>();
         }
     }
 }

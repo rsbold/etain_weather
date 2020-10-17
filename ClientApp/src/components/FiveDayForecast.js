@@ -31,14 +31,14 @@ export class FiveDayForecast extends React.Component {
             loading: false,
         });
     }
+
     render() {
         let content;
         if(this.state.loading) {
             content = <p>Loading weather forecast, please wait...</p>
         } else {
             content = this.state.dayForecasts.consolidated_weather.map((f) => <DayForecast
-                applicable_date = {f.applicable_date}
-                weather_state_name = {f.weather_state_name} />
+                forecast = {f} />
             );
         }
 
