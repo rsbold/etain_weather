@@ -27,7 +27,7 @@ namespace etain.WeatherClient
 
         // Static constructor instantiates HttpClient.
         // TODO: There are some options we can set on HttpClient, possibly set these
-        // up here?
+        // up here?  Works OK for now, if it ain't broke...
         static MetaweatherClient()
         {
             httpClient = new HttpClient();
@@ -35,6 +35,8 @@ namespace etain.WeatherClient
 
         public static async Task<Forecast> GetForecast()
         {
+            // Construct our URI - done this just in case we ever need to 
+            // handle other LocationIds.
             string uri = $"{BaseUri}{LocationId}";
 
             System.Diagnostics.Debug.WriteLine($"URI to be queried is {uri}");
@@ -61,8 +63,7 @@ namespace etain.WeatherClient
                 // Property names on these classes match property names on the 
                 // returned JSON object (all lowercase, snake case) so mapping
                 // happens automatically.
-                // TODO: I think there's a way to map lowercase, snake case JSON
-                // property names to PascalCase .Net property names.  Investigate this.
+                
                 try{
                     return await JsonSerializer.DeserializeAsync<Forecast>(
                         responseStream,

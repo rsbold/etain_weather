@@ -14,14 +14,10 @@ namespace etain.Models
     // in this code by a DayForecast object, this class
     // contains a list of DayForecast objects.
 
-    // Note property names in Forecast and DayForecast don't
-    // follow the usual .net PascalCase convention, they are
-    // lower case and snake_case to match the property names
-    // returned by the API.
-    // TODO: I think there's a way to map PascalCase .net 
-    // property names to json snake_case names, need to look
-    // into this - it would be nice to be name properties in 
-    // these classes according to the .net convention.
+    // Used JsonPropertyName decorators so we can use PascalCase
+    // for .net property names (following convention) and 
+    // snake_case for json property names (also following convention).
+    
     public class Forecast
     {
         [JsonPropertyName("consolidated_weather")]
