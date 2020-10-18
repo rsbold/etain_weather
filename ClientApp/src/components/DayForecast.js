@@ -27,10 +27,6 @@ import { Card, Row, Col } from 'react-bootstrap';
 
 export class DayForecast extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const applicableDate = new Date(this.props.forecast.applicable_date).toLocaleDateString('en-GB');
         const imgSource = 'https://www.metaweather.com/static/img/weather/png/' + this.props.forecast.weather_state_abbr + '.png';
