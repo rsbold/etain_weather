@@ -47,7 +47,7 @@ export class DayForecast extends React.Component {
                                 <img src={imgSource} alt='weather icon' width='64' height='64' />
                             </Col>
                             <Col lg={3}>
-                                <div class="lead">
+                                <div className="lead">
                                     Temp: {this.props.forecast.the_temp.toFixed()}&deg;C
                                 </div>
                                 <div>
