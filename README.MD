@@ -41,7 +41,7 @@ This component is responsible for rendering a single day's forecast.  All the da
 
 ~~This is a very simple component at the moment, need to work on the presentation and including all relevant props.~~ This component now looks decent (to me, NB I am NOT a graphic designer!) and includes most of the properties returned by the API.  The graphic representing the weather state is retrieved dynamically by building up the url of the image using the weather_state_abbr property.
 
-### Forecast
+### FiveDayForecast
 This component represents a forecast consisting of a number of day forecasts.  At the moment it renders a heading and a list of DayForecast components.
 
 This component is responsible for calling the Get method on the WeatherForecastController.  The fetchWeatherData method gets the authentication token from the authService, and if it's present sets it as the Authorization header on the request.  We call the controller action asynchronously.  When we get the response back from the controller, we set it as the component's dayForcasts state, and we also set the forecastRetrievedDate and loading to false.  This causes the component to re-render, removing the "please wait" message and instead rendering a list of DayForecast components.
