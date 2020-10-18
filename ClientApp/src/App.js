@@ -14,7 +14,7 @@ export default class App extends Component {
     return (
       <Layout>
         <AuthorizeRoute exact path='/' component={FiveDayForecast} />
-        <Route path={ApplicationPaths.ApiAuthorizationPrefix5} component={ApiAuthorizationRoutes} />
+        <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />
       </Layout>
     );
   }
