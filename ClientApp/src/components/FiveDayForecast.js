@@ -53,6 +53,7 @@ export class FiveDayForecast extends React.Component {
             <div>
                 <h1>Belfast forecast retrieved at {retrievedDate} {retrievedTime}</h1>
                 <Button onClick={this.fetchWeatherData}>Refresh</Button>
+                <span className='float-right'>Forecast data provided by metaweather.com</span>
                 {content}
             </div>
         );
