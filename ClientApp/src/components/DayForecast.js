@@ -39,10 +39,10 @@ export class DayForecast extends React.Component {
                     </Card.Header>
                     <Card.Body>
                         <Row>
-                            <Col lg={2}>
+                            <Col lg={2} sm={6} xs={6}>
                                 <img src={imgSource} alt='weather icon' width='64' height='64' />
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={3} sm={6} xs={6}>
                                 <div className="lead">
                                     Temp: {this.props.forecast.the_temp.toFixed()}&deg;C
                                 </div>
@@ -51,7 +51,7 @@ export class DayForecast extends React.Component {
                                 Max: {this.props.forecast.max_temp.toFixed()}&deg;C 
                                 </div>
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={3} sm={6} xs={6}>
                                 <div>
                                     Wind direction: {this.props.forecast.wind_direction_compass}
                                 </div>
@@ -59,7 +59,7 @@ export class DayForecast extends React.Component {
                                     Wind speed: {this.props.forecast.wind_speed.toFixed()}
                                 </div>
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={4} sm={6} xs={6}>
                                 Air pressure: {this.props.forecast.air_pressure.toFixed()}<br />
                                 Humidity: {this.props.forecast.humidity.toFixed()}<br />
                                 Visibility: {this.props.forecast.visibility.toFixed()}<br />
