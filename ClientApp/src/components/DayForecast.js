@@ -29,7 +29,7 @@ export class DayForecast extends React.Component {
 
     render() {
         const applicableDate = new Date(this.props.forecast.applicable_date).toLocaleDateString('en-GB');
-        const imgSource = 'https://www.metaweather.com/static/img/weather/png/' + this.props.forecast.weather_state_abbr + '.png';
+        const imgSource = 'https://www.metaweather.com/static/img/weather/png/64/' + this.props.forecast.weather_state_abbr + '.png';
         return(
             <div>
                 <div>&nbsp;</div>
@@ -40,7 +40,7 @@ export class DayForecast extends React.Component {
                     <Card.Body>
                         <Row>
                             <Col lg={2} sm={6} xs={6}>
-                                <img src={imgSource} alt='weather icon' width='64' height='64' />
+                                <img src={imgSource} alt='weather icon' />
                             </Col>
                             <Col lg={3} sm={6} xs={6}>
                                 <div className="lead">
