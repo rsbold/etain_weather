@@ -53,7 +53,10 @@ export class FiveDayForecast extends React.Component {
             title = <h1>Loading please wait...</h1>
             content = <div>Loading, please wait...</div>
         } else {
-            title = <h1>{this.state.city} forecast retrieved at {retrievedDate} {retrievedTime}</h1>
+            title = <div>
+                <h1>{this.state.city} forecast retrieved at {retrievedDate} {retrievedTime}</h1>
+                <div>Sunrise: {sunrise}, sunset: {sunset}</div>
+            </div>
             // API returns 6 days worth of forecasts by default but the spec calls for
             // us to display only 5 days.  Use array slice function to limit the number
             // of day forecasts we render.
@@ -67,7 +70,6 @@ export class FiveDayForecast extends React.Component {
         return(
             <div>
                 {title}
-                <div>Sunrise: {sunrise}, sunset: {sunset}</div>
                 <Button onClick={this.fetchWeatherData}>Refresh</Button>
                 <span className='float-right'>
                     Forecast data provided by <a href='https://www.metaweather.com'>metaweather.com</a>
