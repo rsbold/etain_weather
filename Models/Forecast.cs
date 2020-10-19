@@ -20,6 +20,16 @@ namespace etain.Models
     
     public class Forecast
     {
+        // Title is actually the city (or location, more broadly).  Sticking with Metaweather's name.
+        [JsonPropertyName("title")]
+        public string Title {get;set;}
+
+        [JsonPropertyName("sun_rise")]
+        public DateTime Sunrise {get;set;}
+
+        [JsonPropertyName("sun_set")]
+        public DateTime Sunset {get;set;}
+        
         [JsonPropertyName("consolidated_weather")]
         public IEnumerable<DayForecast> DayForecasts {get;set;}
 
