@@ -34,10 +34,17 @@ export class FiveDayForecast extends React.Component {
     }
 
     render() {
+
+        const retrievedDate = new Date(this.state.forecastRetrievedDate).toLocaleDateString('en-GB');
+        const retrievedTime = new Date(this.state.forecastRetrievedDate).toLocaleTimeString('en-GB');
+
         let content;
+        let title;
         if(this.state.loading) {
+            title = <h1>Loading please wait...</h1>
             content = <div>Loading, please wait...</div>
         } else {
+            title = <h1>Belfast forecast retrieved at {retrievedDate} {retrievedTime}</h1>
             // API returns 6 days worth of forecasts by default but the spec calls for
             // us to display only 5 days.  Use array slice function to limit the number
             // of day forecasts we render.
@@ -47,11 +54,10 @@ export class FiveDayForecast extends React.Component {
             );
         }
 
-        const retrievedDate = new Date(this.state.forecastRetrievedDate).toLocaleDateString('en-GB');
-        const retrievedTime = new Date(this.state.forecastRetrievedDate).toLocaleTimeString('en-GB');
+        
         return(
             <div>
-                <h1>Belfast forecast retrieved at {retrievedDate} {retrievedTime}</h1>
+                {title}
                 <Button onClick={this.fetchWeatherData}>Refresh</Button>
                 <span className='float-right'>Forecast data provided by metaweather.com</span>
                 {content}
