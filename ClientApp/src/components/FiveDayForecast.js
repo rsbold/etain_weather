@@ -28,15 +28,22 @@ export class FiveDayForecast extends React.Component {
         const response = await fetch('WeatherForecast', {
             headers: !token ? {} : {'Authorization' : `Bearer ${token}`}
         });
-        const data = await response.json();
-        this.setState({
-            city: data.title,
-            sun_rise: data.sun_rise,
-            sun_set: data.sun_set,
-            dayForecasts: data,
-            forecastRetrievedDate: Date.now(),
-            loading: false,
-        });
+        try {
+            const data = await response.json();
+            if(data) {
+                this.setState({
+                    city: data.title,
+                    sun_rise: data.sun_rise,
+                    sun_set: data.sun_set,
+                    dayForecasts: data,
+                    forecastRetrievedDate: Date.now(),
+                    loading: false,
+                });
+            }
+        }
+        catch {
+            this.props.history.push('/login');
+        }
     }
 
     render() {
