@@ -1,0 +1,25 @@
+{
+  "name": "etain_weather",
+  "version": "1.0.0",
+  "description": "ASP.Net MVC / React project to display the next 5 days weather forecast for Belfast",
+  "main": "ClientApp/public/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsbold/etain_weather.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsbold/etain_weather/issues"
+  },
+  "homepage": "https://github.com/rsbold/etain_weather#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-scripts": "^4.0.3"
+  }
+}
