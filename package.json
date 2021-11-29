@@ -20,6 +20,6 @@
   "homepage": "https://github.com/rsbold/etain_weather#readme",
   "dependencies": {
     "react": "^17.0.2",
-    "react-scripts": "^4.0.3"
+    "react-scripts": "^3.4.4"
   }
 }
